@@ -1,0 +1,157 @@
+/* Reset básico */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: auto;
+  }
+  
+  /* Fundo desfocado */
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/images/fundo1.webp') no-repeat center center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.5); /* Camada de escurecimento (preto com 50% de opacidade) */
+    background-blend-mode: darken; /* Mistura a cor com a imagem */
+    filter: blur(4px);
+    z-index: -1;
+  }
+  
+  /* Conteúdo principal */
+  .content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  /* Popup */
+  .popup {
+    background-color: rgba(212, 212, 212, 1.0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 10px 5px 40px 5px;
+    width: calc(100% - 40px); /* Garante margem lateral */
+    max-width: 400px; /* Limita largura máxima */
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+    margin: 20px auto; /* Centraliza com espaçamento */
+    box-sizing: border-box; /* Inclui padding na largura */
+  }
+  
+  /* Título */
+  .popup h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  /* Evita quebra de texto */
+  .no-wrap {
+    white-space: nowrap;
+  }
+  
+  /* Imagem */
+  .popup img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  /* Parágrafos */
+  .popup p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Links */
+  .popup a {
+    text-decoration: none;
+  }
+  
+  #discount {
+    color: #CE2121;
+  }
+  
+  /* Botão */
+  .button-link {
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #FF5733;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .button-link:hover {
+    background-color: #CE2121;
+  }
+  
+  /* Rodapé */
+  footer {
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    padding: 10px 0;
+    background-color: rgba(1, 1, 1, 0.8);
+    background-blend-mode: darken;
+    filter: blur(2px);
+  }
+  footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+  }
+  footer a:hover {
+    text-decoration: underline;
+  }
+  footer p {
+    margin-top: 10px;
+  }
+  
+  /* Animação fadeIn */
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+  }
+  
+  /* Media Queries para telas menores */
+  @media (max-width: 768px) {
+    footer {
+        font-size: 10px;
+        padding: 15px 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .popup {
+        width: calc(100% - 60px); /* Aumenta a margem lateral */
+        margin: 15px auto; /* Reduz espaço vertical */
+    }
+    .popup h1 {
+        margin-bottom: 10px;
+    }
+    footer {
+        padding: 12px 0;
+        font-size: 9px;
+    }
+  }
